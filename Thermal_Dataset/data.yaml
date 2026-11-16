@@ -1,0 +1,19 @@
+path: /home/intel/intel/Thermal Fault Identification/detection_runs/Thermal_Dataset/yolo
+train: images/train
+val: images/val
+test: images/test
+names:
+- Contactor
+- MCB
+- PLC I-O
+- PLC Module
+- PLC PSU
+- Power Supply
+- Relay
+- Servo Drive
+- Terminal Block
+- Transformer
+- VFD
+- object
+- PLC Power Supply
+- PSU
