@@ -1,0 +1,16 @@
+true\pred,Contactor,MCB,PLC I-O,PLC Module,PLC PSU,Power Supply,Relay,Servo Drive,Terminal Block,Transformer,VFD,object,PLC Power Supply,PSU,background
+Contactor,0,0,0,0,0,0,0,0,0,0,0,0,0,0,308
+MCB,0,0,0,0,0,0,0,0,0,0,0,0,0,0,371
+PLC I-O,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PLC Module,0,0,0,0,0,0,0,0,0,0,0,0,0,0,168
+PLC PSU,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19
+Power Supply,0,0,0,0,0,0,0,1,0,0,0,0,0,0,21
+Relay,0,0,0,0,0,0,0,0,0,0,0,0,0,0,237
+Servo Drive,0,0,0,0,0,0,0,14,0,0,0,0,0,0,96
+Terminal Block,0,0,0,0,0,0,0,0,0,0,0,0,0,0,191
+Transformer,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16
+VFD,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23
+object,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PLC Power Supply,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+PSU,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5
+background,0,0,0,0,0,0,0,46,0,0,0,0,0,0,0

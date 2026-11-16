@@ -48,7 +48,16 @@ detection_runs/<RGB_Dataset or Thermal_Dataset>/
   models/ssd/best.pt
   results/comparison.csv
   results/results.png
+  results/metrics_heatmap.png
+  results/per_class_metrics.csv
+  results/confusion_matrix_<model>.csv
+  results/confusion_matrix_<model>.png
 ```
+
+Confusion matrices use score >= 0.25 and class-aware IoU >= 0.5. Rows are
+ground-truth categories, columns are predicted categories, and the background
+row/column counts false positives and missed detections. Per-class precision,
+recall and F1 use those same matched detections.
 
 ## Individual Scripts
 

@@ -143,6 +143,28 @@ class DetectionPipelineTests(unittest.TestCase):
         self.assertTrue((output / "comparison.csv").is_file())
         with Image.open(output / "results.png") as image:
             self.assertGreater(image.width, 0)
+        self.assertTrue((output / "metrics_heatmap.png").is_file())
+
+    def test_confusion_matrix_and_class_diagnostics(self):
+        from evaluate_models import detection_confusion_matrix, save_diagnostics
+        data = json.loads(json.dumps(self.data))
+        data["annotations"].append({
+            "id": 22, "image_id": 12, "category_id": 2,
+            "bbox": [5, 5, 10, 10], "iscrowd": 0,
+        })
+        predictions = [
+            {"image_id": 11, "category_id": 2, "bbox": [16, 16, 24, 16], "score": .9},
+            {"image_id": 12, "category_id": 9, "bbox": [50, 40, 10, 10], "score": .8},
+        ]
+        matrix, labels = detection_confusion_matrix(data, predictions)
+        self.assertEqual(labels, ["normal", "fault", "background"])
+        self.assertEqual(matrix.tolist(), [[0, 0, 1], [1, 0, 0], [0, 1, 0]])
+        output = self.root / "diagnostics"
+        output.mkdir()
+        save_diagnostics(data, {"Test model": predictions}, output)
+        self.assertTrue((output / "confusion_matrix_test_model.png").is_file())
+        self.assertTrue((output / "confusion_matrix_test_model.csv").is_file())
+        self.assertTrue((output / "per_class_metrics.csv").is_file())
 
     def test_torchvision_training_and_checkpoint_reload(self):
         import torch
